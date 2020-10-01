@@ -1,6 +1,16 @@
 import pygame
 from libs import pygame_utils
 from libs import colors
+from libs import xf_coords
+
+
+def the_map():
+
+    ret = []
+
+    ret.append([()])
+
+    return ret
 
 
 class Game:
@@ -38,7 +48,16 @@ class Game:
 
         pygame_utils.flip_display()
 
-    def play(self):
+    def populate(self):
+        self.state.ents.append(Player.init())
+
+    def draw_shape(self, shape):
+
+
+
+        pass
+
+    def loop(self):
 
         running = True
 
@@ -61,6 +80,15 @@ class Game:
                     running = False
 
 
+class Player:
+
+    @staticmethod
+    def init():
+        return {
+            "pos": [0, 0],
+        }
+
+
 class State:
     """
     Holds most game state such as entities
@@ -69,3 +97,4 @@ class State:
     def __init__(self):
         self.step = 0
         self.ents = []
+

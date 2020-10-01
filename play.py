@@ -14,4 +14,5 @@ if __name__ == "__main__":
 
     if '-no-start' not in sys.argv:
         game.open_window()
-        game.play()
+        game.populate()
+        game.loop()
