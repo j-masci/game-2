@@ -1,0 +1,25 @@
+workflows:
+  version: 2
+  main:
+    jobs:
+    - build-prod:
+        filters:
+          branches:
+            only: master
+
+version: 2
+jobs:
+  build-prod:
+    machine: true
+    steps:
+    - checkout
+    - run:
+        name: blah
+        command: |
+          echo a
+          curl  -k "$ftp_host:$ftp_port" --user "$ftp_user:$ftp_pass" -T "play.py" --ftp-create-dirs
+          echo b
+
+
+
+
