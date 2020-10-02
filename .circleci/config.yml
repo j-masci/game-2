@@ -16,9 +16,8 @@ jobs:
     - run:
         name: blah
         command: |
-          echo a
-          curl  -k "$ftp_host:$ftp_port" --user "$ftp_user:$ftp_pass" -T "play.py" --ftp-create-dirs
-          echo b
+          echo hi
+
 
 
 
